@@ -1,0 +1,12 @@
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.csproj.AssemblyReference.cache
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.csproj.SuggestedBindingRedirects.cache
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.MainForm.resources
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.FormIngredient.resources
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.Properties.Resources.resources
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.csproj.GenerateResource.cache
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.csproj.CoreCompileInputs.cache
+C:\Users\sunde\Assignment4.cs\Assignment4\bin\Debug\Assignment4.exe.config
+C:\Users\sunde\Assignment4.cs\Assignment4\bin\Debug\Assignment4.exe
+C:\Users\sunde\Assignment4.cs\Assignment4\bin\Debug\Assignment4.pdb
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.exe
+C:\Users\sunde\Assignment4.cs\Assignment4\obj\Debug\Assignment4.pdb

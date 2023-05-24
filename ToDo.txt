@@ -1,0 +1,11 @@
+﻿1. Create following classes. Right click on Assignment 4 and select Add -> Class.
+- Recipe Right click on Assignment 4 and select Add -> Class.
+	Create the recipe as the class diagram page 9.
+	Create methods for Add, Delete, Change and other methods for array of ingredients. 
+
+- RecipeManager Right click on Assignment 4 and select Add -> Class.
+	You will create a List of Recipe.
+	Create methods for Add, Get, Delete, Change and other methods from class diagram page 8.
+
+- MainForm GUI
+	Call methods from recipeManager for Add, Edit, Delete
