@@ -31,15 +31,15 @@
             this.cmbBoxCategory = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddRecipe = new System.Windows.Forms.Button();
-            this.txtNameIngredient = new System.Windows.Forms.RichTextBox();
+            this.txtBoxDescription = new System.Windows.Forms.RichTextBox();
             this.btnAddIngredient = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtBoxName = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.listBoxRecipes = new System.Windows.Forms.ListBox();
             this.btnEditStart = new System.Windows.Forms.Button();
             this.btnEditFinish = new System.Windows.Forms.Button();
             this.btnDeleate = new System.Windows.Forms.Button();
@@ -60,9 +60,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnAddRecipe);
-            this.groupBox1.Controls.Add(this.txtNameIngredient);
+            this.groupBox1.Controls.Add(this.txtBoxDescription);
             this.groupBox1.Controls.Add(this.btnAddIngredient);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.txtBoxName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbBoxCategory);
@@ -83,13 +83,13 @@
             this.btnAddRecipe.UseVisualStyleBackColor = true;
             this.btnAddRecipe.Click += new System.EventHandler(this.btnAddRecipe_Click);
             // 
-            // txtNameIngredient
+            // txtBoxDescription
             // 
-            this.txtNameIngredient.Location = new System.Drawing.Point(6, 156);
-            this.txtNameIngredient.Name = "txtNameIngredient";
-            this.txtNameIngredient.Size = new System.Drawing.Size(319, 134);
-            this.txtNameIngredient.TabIndex = 5;
-            this.txtNameIngredient.Text = "";
+            this.txtBoxDescription.Location = new System.Drawing.Point(6, 156);
+            this.txtBoxDescription.Name = "txtBoxDescription";
+            this.txtBoxDescription.Size = new System.Drawing.Size(319, 134);
+            this.txtBoxDescription.TabIndex = 5;
+            this.txtBoxDescription.Text = "";
             // 
             // btnAddIngredient
             // 
@@ -101,12 +101,12 @@
             this.btnAddIngredient.UseVisualStyleBackColor = true;
             this.btnAddIngredient.Click += new System.EventHandler(this.btnAddIngredient_Click);
             // 
-            // maskedTextBox1
+            // txtBoxName
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(133, 48);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(192, 26);
-            this.maskedTextBox1.TabIndex = 3;
+            this.txtBoxName.Location = new System.Drawing.Point(133, 48);
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.Size = new System.Drawing.Size(192, 26);
+            this.txtBoxName.TabIndex = 3;
             // 
             // label2
             // 
@@ -153,13 +153,15 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Number of Ingredients";
             // 
-            // richTextBox2
+            // listBoxRecipes
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(349, 45);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(439, 257);
-            this.richTextBox2.TabIndex = 6;
-            this.richTextBox2.Text = "";
+            this.listBoxRecipes.ItemHeight = 20;
+            this.listBoxRecipes.Location = new System.Drawing.Point(349, 45);
+            this.listBoxRecipes.Name = "listBoxRecipes";
+            this.listBoxRecipes.Size = new System.Drawing.Size(439, 244);
+            this.listBoxRecipes.TabIndex = 6;
+            this.listBoxRecipes.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
+            this.listBoxRecipes.SelectedIndexChanged += new System.EventHandler(this.listBoxRecipes_SelectedIndexChanged);
             // 
             // btnEditStart
             // 
@@ -220,7 +222,7 @@
             this.Controls.Add(this.btnDeleate);
             this.Controls.Add(this.btnEditFinish);
             this.Controls.Add(this.btnEditStart);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.listBoxRecipes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -240,14 +242,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddIngredient;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtBoxName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddRecipe;
-        private System.Windows.Forms.RichTextBox txtNameIngredient;
+        private System.Windows.Forms.RichTextBox txtBoxDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.ListBox listBoxRecipes;
         private System.Windows.Forms.Button btnEditStart;
         private System.Windows.Forms.Button btnEditFinish;
         private System.Windows.Forms.Button btnDeleate;

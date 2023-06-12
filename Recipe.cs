@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,8 +13,6 @@ namespace Assignment4
         private string description;
         private string[] ingredients;
         private FoodCategory foodCategory;
-
-        // Have a parameter for constructor int maxNumOfIngredients
         // Create instance for string array of ingredients.
  
         // Create Constructor of Recipe below.
@@ -50,8 +49,6 @@ namespace Assignment4
 
         // Have the methods for Add, Delete and Change ingredient.
         // Use same concept from PartyMAnager and change to your methods shown in class diagram page 9.
-
-        // Create the private method FindVacantPos
         private int FindVacantPos()
         {
             int vacantPos = -1;
@@ -65,8 +62,6 @@ namespace Assignment4
             }
             return vacantPos;
         }
-
-        // Create the method AddIngredient.
         public bool AddIngredient(string ingredient)
         {
             bool ok = true;
@@ -81,14 +76,21 @@ namespace Assignment4
             }
             return ok;
         }
-
-        // Create a bool method CheckIndex
+        public bool DeleateIngridient(int index)
+        {
+            bool ok = false;
+            if (CheckIndex(index))
+            {
+                Ingredients[index] = null;
+                MoveElementOneStepLeft(index);
+                ok = true;
+            }
+            return ok;
+        }
         bool CheckIndex(int index)
         {
             return (index>=0) && (index<Ingredients.Length);
         }
-
-        // Create a bool method ChangeIngredientAt
         public bool ChangeIngredientAt(int index, string ingredient)
         {
             bool ok = false;
@@ -99,8 +101,6 @@ namespace Assignment4
             }
             return ok;
         }
-
-        // Create a bool method DeleteIngredientAt
         public bool DeleateIngredientAt(int index)
         {
             bool ok = false;
@@ -112,8 +112,6 @@ namespace Assignment4
             }
             return ok;
         }
-        // Create a void method MoveElementOneStepLeft
-
         private void MoveElementOneStepLeft(int index)
         {
             for(int i=index+1;i<ingredients.Length; i++)
@@ -122,19 +120,73 @@ namespace Assignment4
                 ingredients[i] = null;
             }
         }
-
-
-        // Create an int method CurrentNumberOfIngredients
+        // Follow the steps from screenshot
+        // Change guestList to ingredients here
         public int CurrentNumberOfIngredients()
         {
             int numOfIngredients = 0;
-
-
+            for(int i=0;i<ingredients.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(ingredients[i]))
+                {
+                    numOfIngredients++;
+                }
+            }
             return numOfIngredients;
+        }
+        private int NumOfIngredients()
+        {
+            int numIngredients = 0;
+            for (int i = 0; i < ingredients.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(ingredients[i]))
+                {
+                    numIngredients++;
+                }
+            }
+            return numIngredients;
+        }
+        public int Count
+        {
+            get { return NumOfIngredients(); }
+        }
+        public double CalcTotalIngreditents()
+        {
+            int numOfIngredients = NumOfIngredients();
+            double totalIngredients = numOfIngredients * NumOfIngredients();
+            return totalIngredients;
+        }
+
+        // Create a method returns string array
+        // Follow the steps from page 9 in the help document for grade C
+        public string[] GetIngredientList()
+        {
+            int size = CurrentNumberOfIngredients();
+            if(size <= 0)
+                return null;
+            string[] ingredients = new string[size];
+            for(int i=0,j=0;i<ingredients.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(ingredients[i]))
+                {
+                    ingredients[j++] = ingredients[i];
+                }
+            }
+            return ingredients;
         }
         public int MaxNumOfIngredients
         {
             get { return MaxNumOfIngredients; }
         }
+
+        public override string ToString()
+        {
+            // Use the variables for food category and number of ingredients and
+            // write in the "  " with curly bracket below
+            string strOut = $"{name}  ";
+            return strOut;
+        }
+
+
     }
 }

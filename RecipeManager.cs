@@ -14,8 +14,6 @@ namespace Assignment4
         {
             recipeList = new Recipe[maxNumOfElements];
         }
-
-        // Create a bool method AddRecipe
         public bool AddRecipe(Recipe recipe)
         {
             bool ok = true;
@@ -30,8 +28,6 @@ namespace Assignment4
             }
             return ok;
         }
-
-        // Create a bool method ChangeAt
         public bool ChangeRecipeAt(int index, Recipe recipe)
         {
             bool ok = false;
@@ -42,7 +38,6 @@ namespace Assignment4
             }
             return ok;
         }
-        // Create a bool method DeleteAt
         public bool DeleateRecipetAt(int index)
         {
             bool ok = false;
@@ -54,13 +49,10 @@ namespace Assignment4
             }
             return ok;
         }
-        // Create a bool method CheckIndex
         bool CheckIndex(int index)
         {
             return (index >= 0) && (index < recipeList.Length);
         }
-
-        // Create a private void method MoveElementsOneStepLeft
         private void MoveElementOneStepLeft(int index)
         {
             for (int i = index + 1; i < recipeList.Length; i++)
@@ -69,14 +61,12 @@ namespace Assignment4
                 recipeList[i] = null;
             }
         }
-
-        // Create an int method FindVacantPos
         private int FindVacantPos()
         {
             int vacantPos = -1;
             for (int index = 0; index < recipeList.Length; index++)
             {
-                if (recipeList[index] != null)
+                if (recipeList[index] == null)
                 {
                     vacantPos = index;
                     break;
@@ -84,6 +74,43 @@ namespace Assignment4
             }
             return vacantPos;
         }
+        private int NumOfRecipes()
+        {
+            int numRecipes = 0;
+            for (int i = 0; i < recipeList.Length; i++)
+            {
+                if (recipeList[i] != null)
+                {
+                    numRecipes++;
+                }
+            }
+            return numRecipes;
+        }
+        public int Count
+        {
+            get { return NumOfRecipes(); }
+        }
 
+        public string[] GetRecipeListToString()
+        {
+            int size = NumOfRecipes();
+            if (size <= 0)
+                return null;
+            string[] recipes = new string[size];
+            for (int i = 0, j = 0; i < recipeList.Length; i++)
+            {
+                if (recipeList[i] != null)
+                {
+                    recipes[j++] = recipeList[i].ToString();
+                }
+            }
+            return recipes;
+        }
+        public double CalcTotalIngreditents()
+        {
+            int numOfIngredients = NumOfRecipes();
+            double totalIngredients = numOfIngredients * NumOfRecipes();
+            return totalIngredients;
+        }
     }
 }

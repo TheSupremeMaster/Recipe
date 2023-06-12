@@ -34,7 +34,7 @@ namespace Assignment4
         public void InitializeGUI()
         {
             if (recipe.Ingredients==null) 
-                recipe.Ingredients = new string[recipe.MaxNumberOfIngredients()];
+                recipe.Ingredients = new string[recipe.MaxNumOfIngredients];
             lstIngredients.Items.Clear();
             groupBox1.Text = " " + recipe.CurrentNumberOfIngredients().ToString();
             int count = recipe.CurrentNumberOfIngredients();
@@ -44,10 +44,12 @@ namespace Assignment4
                     lstIngredients.Items.Add(recipe.Ingredients[index]);
             }
         }
+
         public int MaxNumOfIngredients
         {
             get { return MaxNumOfIngredients; }
         }
+
         public Recipe Recipe
         {
             get { return recipe; }
@@ -57,12 +59,11 @@ namespace Assignment4
                     recipe = value;
             }
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(lstIngredients.Text))
+            if (!string.IsNullOrEmpty(txtBoxIngredient.Text))
             {
-                bool ok = recipe.AddIngredient(lstIngredients.Text);
+                bool ok = recipe.AddIngredient(txtBoxIngredient.Text);
                 if (ok)
                     UpdateGUI();
                 else
@@ -73,17 +74,17 @@ namespace Assignment4
         }
         private void UpdateGUI()
         {
-            lstIngredients.Text = string.Empty;
+            txtBoxIngredient.Text = string.Empty;
             InitializeGUI();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int index = lstIngredients.SelectedIndex;
-            string text = lstIngredients.Text;
+            string text = txtBoxIngredient.Text;
             if(index !=-1 && !string.IsNullOrEmpty(text))
             {
-                recipe.ChangeIngredientsAt(index, text);
+                recipe.ChangeIngredientAt(index, text);
             }
             UpdateGUI();
         }
